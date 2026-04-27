@@ -32,32 +32,19 @@ const projects = [
   },
   {
     id: 3,
-    title: "语音合成实验探究工具",
-    desc: "支持学生端实验探究、教师端流程切换、数据收集与词云展示",
-    categories: ["信息科技", "AI工具", "公开课支持"],
-    target: "八年级信息科技教师",
-    subject: "信息科技（八年级）",
-    environment: "Win10 及以上",
-    port: "8080",
+    title: "班级电子宠物养成系统",
+    desc: "一键双击bat即可启动！超萌班级专属电子宠物，低年级孩子的最爱，陪伴孩子们快乐成长每一天！",
+    categories: ["班主任工具", "班级管理"],
+    target: "班主任",
+    subject: "通用",
+    environment: "Win7 / Win10 通用",
+    port: "无",
     links: {
-      demo: "",
-      download: ""
+      demo: "https://www.douyin.com/video/7633419000180922601",
+      download: "https://www.alipan.com/s/TWmwzXGEpgR"
     }
   },
-  {
-    id: 4,
-    title: "图像识别课堂工具",
-    desc: "用于图像识别教学演示和学生实验操作",
-    categories: ["信息科技", "AI工具"],
-    target: "八年级信息科技教师",
-    subject: "信息科技（八年级）",
-    environment: "Win10 及以上",
-    port: "3000",
-    links: {
-      demo: "",
-      download: ""
-    }
-  }
+  
 ];
 
 // 将数据暴露给全局作用域，供 app.js 使用
