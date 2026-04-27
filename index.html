@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>郑老师做AI工具 - 课堂与校园实用工具导航</title>
+    <meta name="description" content="象山00后一线信息科技教师，继续免费给老师做AI工具。涵盖课堂工具、校园工具、公开课支持等。">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 背景光效 -->
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+
+    <div class="app-container">
+        <!-- 顶部个人信息区 (Hero) -->
+        <header class="hero-section">
+            <div class="avatar-container">
+                <!-- 预设一个 SVG 头像，您可以替换为 assets/avatar.png -->
+                <img src="assets/avatar.png" alt="郑老师的头像" class="avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%233b82f6\'/><text x=\'50\' y=\'65\' font-family=\'Arial\' font-size=\'50\' fill=\'white\' text-anchor=\'middle\'>郑</text></svg>'">
+            </div>
+            <div class="hero-content">
+                <h1 class="brand-name">郑老师做AI工具</h1>
+                <p class="slogan">继续免费给老师做工具</p>
+                <p class="description">象山00后一线信息科技教师 ｜ 课堂工具 · 校园工具 · 公开课支持</p>
+                
+                <div class="social-links">
+                    <a href="https://v.douyin.com/kV3MJgBb6Qc/" target="_blank" class="social-btn">抖音主页</a>
+                    <a href="https://xhslink.com/m/215TV9DupMK" target="_blank" class="social-btn">小红书主页</a>
+                    <a href="#" target="_blank" class="social-btn">微信公众号</a>
+                    <a href="#" target="_blank" class="social-btn">联系我</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 工具栏：搜索与分类 -->
+        <section class="toolbar-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索工具名称或简介...">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            
+            <div class="category-filters" id="categoryFilters">
+                <!-- 分类按钮将由 JS 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 项目卡片展示区 -->
+        <main class="projects-grid" id="projectsGrid">
+            <!-- 卡片将由 JS 动态生成 -->
+        </main>
+        
+        <!-- 空状态提示 -->
+        <div id="emptyState" class="empty-state hidden">
+            <p>没有找到匹配的工具，请尝试其他关键词。</p>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="app-footer">
+            <p class="footer-brand">郑老师做AI工具</p>
+            <p class="footer-note">一线教师自制工具，仅供教学交流使用</p>
+            <!-- <p class="footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备XXXXXXXX号</a></p> -->
+        </footer>
+    </div>
+
+    <!-- 引入数据和逻辑 -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
