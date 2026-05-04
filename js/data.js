@@ -44,6 +44,20 @@ const projects = [
       download: "https://www.alipan.com/s/TWmwzXGEpgR"
     }
   },
+  {
+  id: 4,
+  title: "错题刷题系统",
+  desc: "双击 EXE 即可启动，老师上传 Excel 题库，学生在线刷题，错题自动进入错题本，后台可导出答题统计",
+  categories: ["课堂工具", "刷题工具", "学业评价"],
+  target: "任课教师、信息科技教师、班主任",
+  subject: "通用",
+  environment: "Win10 / Win11",
+  port: "5003",
+  links: {
+    demo: "https://www.douyin.com/video/7635133651470086390",
+    download: "https://www.alipan.com/s/M42fZnw2rgZ"
+  }
+}
   
 ];
 
