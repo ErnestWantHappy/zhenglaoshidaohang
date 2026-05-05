@@ -55,7 +55,7 @@ const projects = [
   port: "5003",
   links: {
     demo: "https://www.douyin.com/video/7635133651470086390",
-    download: "https://www.alipan.com/s/M42fZnw2rgZ"
+    download: "https://1831383013.share.123865.com/123pan/uwa6jv-0GSm3"
   }
 }
   
