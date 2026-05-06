@@ -12,7 +12,7 @@ const projects = [
     environment: "Win10 / Win11",
     port: "5002",
     links: {
-      demo: "https://www.douyin.com/video/7631928428840684840", // 填入您的抖音视频链接
+      demo: "https://www.douyin.com/video/7631928428840684840",
       download: "https://www.alipan.com/s/F1SXTVpMHbQ"
     }
   },
@@ -33,7 +33,7 @@ const projects = [
   {
     id: 3,
     title: "班级电子宠物养成系统",
-    desc: "一键双击bat即可启动！超萌班级专属电子宠物，低年级孩子的最爱，陪伴孩子们快乐成长每一天！",
+    desc: "一键双击 bat 即可启动，支持班级电子宠物养成、加分扣分、奖励小铺和班级设置",
     categories: ["班主任工具", "班级管理"],
     target: "班主任",
     subject: "通用",
@@ -45,34 +45,33 @@ const projects = [
     }
   },
   {
-  id: 4,
-  title: "错题刷题系统",
-  desc: "双击 EXE 即可启动，老师上传 Excel 题库，学生在线刷题，错题自动进入错题本，后台可导出答题统计",
-  categories: ["课堂工具", "刷题工具", "学业评价"],
-  target: "任课教师、信息科技教师、班主任",
-  subject: "通用",
-  environment: "Win10 / Win11",
-  port: "5003",
-  links: {
-    demo: "https://www.douyin.com/video/7635133651470086390",
-    download: "https://1831383013.share.123865.com/123pan/uwa6jv-0GSm3"
+    id: 4,
+    title: "错题刷题系统",
+    desc: "双击 EXE 即可启动，老师上传 Excel 题库，学生在线刷题，错题自动进入错题本，后台可导出答题统计",
+    categories: ["课堂工具", "刷题工具", "学业评价"],
+    target: "任课教师、信息科技教师、班主任",
+    subject: "通用",
+    environment: "Win10 / Win11",
+    port: "5003",
+    links: {
+      demo: "https://www.douyin.com/video/7635133651470086390",
+      download: "https://1831383013.share.123865.com/123pan/uwa6jv-0GSm3"
+    }
   },
-    {
-  id: 5,
-  title: "考试座位贴生成工具",
-  desc: "导入 Excel 学生信息后，自动生成考试座位贴预览，并支持一键导出 Word 打印",
-  categories: ["班主任工具", "考试工具", "办公工具"],
-  target: "班主任、教务老师、任课教师",
-  subject: "通用",
-  environment: "Win10 / Win11",
-  port: "5004",
-  links: {
-    demo: "https://www.douyin.com/video/7636774379644357922",
-    download: "https://1831383013.share.123865.com/123pan/uwa6jv-kXM13"
+  {
+    id: 5,
+    title: "考试座位贴生成工具",
+    desc: "导入 Excel 学生信息后，自动生成考试座位贴预览，并支持一键导出 Word 打印",
+    categories: ["班主任工具", "考试工具", "办公工具"],
+    target: "班主任、教务老师、任课教师",
+    subject: "通用",
+    environment: "Win10 / Win11",
+    port: "无需端口",
+    links: {
+      demo: "https://www.douyin.com/video/7636774379644357922",
+      download: "https://1831383013.share.123865.com/123pan/uwa6jv-kXM13"
+    }
   }
-},
-}
-  
 ];
 
 // 将数据暴露给全局作用域，供 app.js 使用
