@@ -56,7 +56,21 @@ const projects = [
   links: {
     demo: "https://www.douyin.com/video/7635133651470086390",
     download: "https://1831383013.share.123865.com/123pan/uwa6jv-0GSm3"
+  },
+    {
+  id: 5,
+  title: "考试座位贴生成工具",
+  desc: "导入 Excel 学生信息后，自动生成考试座位贴预览，并支持一键导出 Word 打印",
+  categories: ["班主任工具", "考试工具", "办公工具"],
+  target: "班主任、教务老师、任课教师",
+  subject: "通用",
+  environment: "Win10 / Win11",
+  port: "5004",
+  links: {
+    demo: "https://www.douyin.com/video/7636774379644357922",
+    download: "https://1831383013.share.123865.com/123pan/uwa6jv-kXM13"
   }
+},
 }
   
 ];
