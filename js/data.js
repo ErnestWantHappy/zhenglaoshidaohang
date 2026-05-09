@@ -71,7 +71,22 @@ const projects = [
       demo: "https://www.douyin.com/video/7636774379644357922",
       download: "https://1831383013.share.123865.com/123pan/uwa6jv-kXM13"
     }
+  },
+  {
+  "id": 6,
+  "title": "成绩分析系统",
+  "desc": "导入 Excel 成绩后，自动完成排名、班级统计、趋势分析与报表导出，适合教师本地快速分析考试数据",
+  "categories": ["成绩分析", "教师工具", "办公工具"],
+  "target": "班主任、任课教师、教务老师",
+  "subject": "通用",
+  "environment": "Win10 / Win11",
+  "port": "5004",
+  "links": {
+    "demo": "https://www.douyin.com/video/7637849054571023650",
+    "download": "https://1831383013.share.123865.com/123pan/uwa6jv-zzS13"
   }
+}
+
 ];
 
 // 将数据暴露给全局作用域，供 app.js 使用
