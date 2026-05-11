@@ -40,6 +40,10 @@ body {
     overflow-x: hidden;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 /* =========================================
    背景特效 (网格与光晕)
    ========================================= */
@@ -346,15 +350,19 @@ body {
 }
 
 .action-btn {
+    appearance: none;
+    border: none;
     flex: 1;
     text-align: center;
     padding: 0.6rem 1rem;
     border-radius: 8px;
+    font-family: inherit;
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
     min-width: 100px;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -378,6 +386,19 @@ body {
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: var(--text-secondary);
+}
+
+.btn-private {
+    background: rgba(245, 158, 11, 0.16);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+.btn-private:hover {
+    background: rgba(245, 158, 11, 0.24);
+    border-color: rgba(251, 191, 36, 0.6);
+    transform: translateY(-2px);
 }
 
 .btn-disabled {
@@ -427,6 +448,85 @@ body {
     font-size: 0.8rem;
 }
 
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.modal-card {
+    position: relative;
+    width: min(100%, 420px);
+    padding: 2rem 1.5rem 1.5rem;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+    text-align: center;
+}
+
+.modal-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    border-radius: 18px 18px 0 0;
+    background: linear-gradient(90deg, #f59e0b, #ec4899);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.24);
+}
+
+.modal-eyebrow {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: #fbbf24;
+}
+
+.modal-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.7rem;
+    color: var(--text-primary);
+}
+
+.modal-text {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.modal-text + .modal-text {
+    margin-top: 0.5rem;
+}
+
+.modal-text-accent {
+    color: #e2e8f0;
+}
+
 /* =========================================
    动画
    ========================================= */
@@ -456,6 +556,16 @@ body {
     
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .modal-card {
+        padding: 1.75rem 1.25rem 1.25rem;
+    }
+
+    .modal-title {
+        font-size: 1.45rem;
     }
 }
 

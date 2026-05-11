@@ -3,50 +3,104 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryFilters = document.getElementById('categoryFilters');
     const searchInput = document.getElementById('searchInput');
     const emptyState = document.getElementById('emptyState');
+    const modalElements = createPrivateModal();
 
     let currentCategory = '全部';
     let currentSearchTerm = '';
+    let lastModalTrigger = null;
     const projects = window.PROJECT_DATA || [];
 
-    // 初始化
     init();
 
     function init() {
+        document.body.appendChild(modalElements.overlay);
+        bindModalEvents();
         renderFilters();
         renderProjects();
-        
-        // 绑定搜索事件
+
         searchInput.addEventListener('input', (e) => {
             currentSearchTerm = e.target.value.toLowerCase().trim();
             renderProjects();
         });
     }
 
-    // 提取所有唯一的分类
+    function bindModalEvents() {
+        modalElements.closeButton.addEventListener('click', closePrivateModal);
+
+        modalElements.overlay.addEventListener('click', (event) => {
+            if (event.target === modalElements.overlay) {
+                closePrivateModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modalElements.overlay.classList.contains('hidden')) {
+                closePrivateModal();
+            }
+        });
+    }
+
+    function openPrivateModal(triggerButton) {
+        lastModalTrigger = triggerButton || document.activeElement;
+        modalElements.overlay.classList.remove('hidden');
+        modalElements.overlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        modalElements.closeButton.focus();
+    }
+
+    function closePrivateModal() {
+        modalElements.overlay.classList.add('hidden');
+        modalElements.overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+
+        if (lastModalTrigger && typeof lastModalTrigger.focus === 'function') {
+            lastModalTrigger.focus();
+        }
+    }
+
+    function createPrivateModal() {
+        const overlay = document.createElement('div');
+        overlay.className = 'modal-overlay hidden';
+        overlay.setAttribute('aria-hidden', 'true');
+
+        overlay.innerHTML = `
+            <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="privateToolModalTitle">
+                <button type="button" class="modal-close-btn" aria-label="关闭提示框">×</button>
+                <p class="modal-eyebrow">粉丝定制案例</p>
+                <h2 class="modal-title" id="privateToolModalTitle">暂不共享</h2>
+                <p class="modal-text">通用工具继续免费</p>
+                <p class="modal-text modal-text-accent">个性化可抖音联系低价定制</p>
+            </div>
+        `;
+
+        return {
+            overlay,
+            closeButton: overlay.querySelector('.modal-close-btn')
+        };
+    }
+
     function getCategories() {
         const categories = new Set();
-        projects.forEach(p => {
-            if (p.categories && Array.isArray(p.categories)) {
-                p.categories.forEach(c => categories.add(c));
+        projects.forEach((project) => {
+            if (project.categories && Array.isArray(project.categories)) {
+                project.categories.forEach((category) => categories.add(category));
             }
         });
         return ['全部', ...Array.from(categories)];
     }
 
-    // 渲染分类按钮
     function renderFilters() {
         const categories = getCategories();
         categoryFilters.innerHTML = '';
-        
-        categories.forEach(category => {
+
+        categories.forEach((category) => {
             const btn = document.createElement('button');
             btn.className = `filter-btn ${category === currentCategory ? 'active' : ''}`;
             btn.textContent = category;
             btn.addEventListener('click', () => {
-                // 更新高亮状态
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn').forEach((button) => button.classList.remove('active'));
                 btn.classList.add('active');
-                
+
                 currentCategory = category;
                 renderProjects();
             });
@@ -54,15 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 过滤并渲染项目卡片
     function renderProjects() {
-        const filteredProjects = projects.filter(p => {
-            // 分类匹配
-            const matchCategory = currentCategory === '全部' || p.categories.includes(currentCategory);
-            // 搜索词匹配
-            const matchSearch = p.title.toLowerCase().includes(currentSearchTerm) || 
-                                p.desc.toLowerCase().includes(currentSearchTerm);
-            
+        const filteredProjects = projects.filter((project) => {
+            const matchCategory = currentCategory === '全部' || project.categories.includes(currentCategory);
+            const matchSearch = project.title.toLowerCase().includes(currentSearchTerm)
+                || project.desc.toLowerCase().includes(currentSearchTerm);
+
             return matchCategory && matchSearch;
         });
 
@@ -71,38 +122,49 @@ document.addEventListener('DOMContentLoaded', () => {
         if (filteredProjects.length === 0) {
             projectsGrid.classList.add('hidden');
             emptyState.classList.remove('hidden');
-        } else {
-            projectsGrid.classList.remove('hidden');
-            emptyState.classList.add('hidden');
-            
-            filteredProjects.forEach((p, index) => {
-                const card = createProjectCard(p, index + 1);
-                projectsGrid.appendChild(card);
-            });
+            return;
         }
+
+        projectsGrid.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+
+        filteredProjects.forEach((project, index) => {
+            const card = createProjectCard(project, index + 1);
+            projectsGrid.appendChild(card);
+        });
     }
 
-    // 创建单个卡片的 DOM
+    function createActionButton(project, type) {
+        const links = project.links || {};
+        const shareStatus = project.shareStatus || 'public';
+
+        if (type === 'demo') {
+            if (links.demo && links.demo.trim() !== '') {
+                return `<a href="${links.demo}" target="_blank" rel="noopener noreferrer" class="action-btn btn-secondary">查看演示</a>`;
+            }
+
+            return '<span class="action-btn btn-disabled">查看演示 (整理中)</span>';
+        }
+
+        if (shareStatus === 'private') {
+            return '<button type="button" class="action-btn btn-private" data-action="open-private-modal">暂不共享</button>';
+        }
+
+        if (links.download && links.download.trim() !== '') {
+            return `<a href="${links.download}" target="_blank" rel="noopener noreferrer" class="action-btn btn-primary">获取工具</a>`;
+        }
+
+        return '<span class="action-btn btn-disabled">获取工具 (整理中)</span>';
+    }
+
     function createProjectCard(project, displayIndex) {
         const div = document.createElement('div');
         div.className = 'project-card';
-        
-        // 标签 HTML
-        const tagsHtml = project.categories.map(c => `<span class="tag">${c}</span>`).join('');
-        
-        // 按钮逻辑：如果链接为空，则显示为灰色不可点击
-        const createBtn = (url, text, type) => {
-            if (url && url.trim() !== '') {
-                return `<a href="${url}" target="_blank" class="action-btn ${type}">${text}</a>`;
-            } else {
-                return `<span class="action-btn btn-disabled">${text} (整理中)</span>`;
-            }
-        };
 
-        const demoBtn = createBtn(project.links.demo, '查看演示', 'btn-secondary');
-        const downloadBtn = createBtn(project.links.download, '获取工具', 'btn-primary');
+        const tagsHtml = project.categories.map((category) => `<span class="tag">${category}</span>`).join('');
+        const demoBtn = createActionButton(project, 'demo');
+        const downloadBtn = createActionButton(project, 'download');
 
-        // 环境和端口的动态渲染逻辑
         let envHtml = '';
         if (project.environment && project.environment.trim() !== '') {
             envHtml = `
@@ -127,9 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="card-header">
                 <h3 class="card-title">${displayIndex}. ${project.title}</h3>
             </div>
-            
+
             <p class="card-desc">${project.desc}</p>
-            
+
             <div class="card-meta">
                 <div class="meta-item">
                     <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -142,17 +204,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${envHtml}
                 ${portHtml}
             </div>
-            
+
             <div class="card-tags">
                 ${tagsHtml}
             </div>
-            
+
             <div class="card-actions">
                 ${demoBtn}
                 ${downloadBtn}
             </div>
         `;
-        
+
+        const privateButton = div.querySelector('[data-action="open-private-modal"]');
+        if (privateButton) {
+            privateButton.addEventListener('click', () => openPrivateModal(privateButton));
+        }
+
         return div;
     }
 });
