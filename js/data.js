@@ -107,6 +107,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7638626050859224360",
     download: ""
   }
+},
+  {
+  id: 8,
+  title: "学生免登录音乐学习工具",
+  desc: "学生无需登录即可使用，支持单音校准、音阶热身和K歌实战三阶段练习，可实时反馈音高，适合音乐课、合唱训练和课后自主练习",
+  shareStatus: "public",
+  categories: ["音乐课工具", "学生练习", "课堂工具"],
+  target: "音乐老师、合唱社团老师、需要音准练习的学生",
+  subject: "音乐",
+  environment: "Win10 / Win11",
+  port: "5005",
+  links: {
+    demo: "https://www.douyin.com/video/7639333327086892662",
+    download: "https://pan.quark.cn/s/072499fe829b"
+  }
 }
 
 ];
