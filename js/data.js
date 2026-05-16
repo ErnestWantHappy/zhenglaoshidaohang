@@ -49,20 +49,20 @@ const projects = [
     }
   },
   {
-    id: 4,
-    title: "错题刷题系统",
-    desc: "双击 EXE 即可启动，老师上传 Excel 题库，学生在线刷题，错题自动进入错题本，后台可导出答题统计",
-    shareStatus: "public",
-    categories: ["课堂工具", "刷题工具", "学业评价"],
-    target: "任课教师、信息科技教师、班主任",
-    subject: "通用",
-    environment: "Win10 / Win11",
-    port: "5003",
-    links: {
-      demo: "https://www.douyin.com/video/7635133651470086390",
-      download: "https://1831383013.share.123865.com/123pan/uwa6jv-0GSm3"
-    }
-  },
+  id: 4,
+  title: "错题刷题系统 2.0",
+  desc: "刷题平台 2.0 版本，双击 EXE 即可启动。老师可上传 Excel 题库，学生在线刷题，错题自动进入错题本，后台可查看成绩统计并导出 Excel。本次升级新增多选题、题库限时设置、题库删除、成绩查询更多数据统计、未订正错题统计等功能，更适合课堂练习和课后巩固使用",
+  shareStatus: "public",
+  categories: ["课堂工具", "刷题工具", "学业评价"],
+  target: "任课教师、信息科技教师、班主任",
+  subject: "通用",
+  environment: "Win10 / Win11",
+  port: "5003",
+  links: {
+    demo: "https://www.douyin.com/video/7640308425280576390",
+    download: "https://pan.quark.cn/s/e58b78d0f1ec"
+  }
+},
   {
     id: 5,
     title: "考试座位贴生成工具",
