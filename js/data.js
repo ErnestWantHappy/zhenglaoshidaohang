@@ -122,6 +122,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7639333327086892662",
     download: "https://pan.quark.cn/s/072499fe829b"
   }
+},
+  {
+  id: 9,
+  title: "AI 音乐学习工具 2.0",
+  desc: "AI 音乐学习工具 2.0 版本，本次升级重点支持 K歌实战自定义歌曲，老师可上传自己的歌曲、示范音频和伴奏，录入歌词、唱名和音高；学生打开专属链接即可练习。新版还支持试唱、学生创作、练习数据与成绩查看等功能。通用体验版继续免费，自定义歌曲云端账号版低价内测开放,打开网址即可使用，手机和电脑浏览器都能访问",
+  shareStatus: "public",
+  categories: ["音乐课工具", "AI工具", "学生练习", "课堂工具"],
+  target: "音乐老师、合唱社团老师、需要音准练习和自定义歌曲练习的学生",
+  subject: "音乐",
+  environment: "手机 / 电脑浏览器",
+  port: "无需端口",
+  links: {
+    demo: "https://www.douyin.com/video/7641562554409993974",
+    download: "https://music.teacherlin.store/"
+  }
 }
 
 ];
