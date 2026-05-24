@@ -137,6 +137,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7641562554409993974",
     download: "https://music.teacherlin.store/"
   }
+},
+  {
+  id: 10,
+  title: "AI 智能朗读评价系统",
+  desc: "AI 智能朗读评价系统，打开网址即可使用，手机和电脑浏览器都能访问。老师可创建朗读任务，输入年级、学科和朗读文本，系统自动生成朗读设计；学生提交朗读后，AI 会从字音准确度、朗读流利度、朗读完整度、语气语调、情感表达等维度进行评价，并生成个性化朗读反馈报告，适合语文朗读、英语朗读和课后朗读练习",
+  shareStatus: "public",
+  categories: ["朗读评价", "AI工具", "学生练习", "课堂工具"],
+  target: "语文老师、英语老师、需要朗读练习和朗读评价的学生",
+  subject: "语文 / 英语",
+  environment: "手机 / 电脑浏览器",
+  port: "无需端口",
+  links: {
+    demo: "https://www.douyin.com/video/7643366125628136107?previous_page=app_code_link",
+    download: "https://readfensi.teacherlin.store/"
+  }
 }
 
 ];
