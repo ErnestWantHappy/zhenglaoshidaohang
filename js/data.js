@@ -152,6 +152,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7643366125628136107?previous_page=app_code_link",
     download: "https://readfensi.teacherlin.store/"
   }
+},
+  {
+  id: 11,
+  title: "英语单词节奏跟读工具",
+  desc: "适合小学低年级早读、课前三分钟和课堂热身使用。老师可以手动添加单词，也可以导入 Excel 单词表；进入大屏模式后，单词会按节奏一个个弹出，系统自动朗读英文并显示中文释义，学生跟着节拍一起读。支持节奏设置、朗读次数、停留时间、单词特效和示例词库，打开后即可本地使用",
+  shareStatus: "public",
+  categories: ["英语课工具", "单词跟读", "课堂工具", "早读工具"],
+  target: "小学英语老师、低年级英语课堂、需要单词跟读和早读热身的学生",
+  subject: "英语",
+  environment: "Win10 / Win11",
+  port: "无需端口",
+  links: {
+    demo: "https://www.douyin.com/video/7645548117182365802",
+    download: "https://pan.quark.cn/s/96f797e3ba09"
+  }
 }
 
 ];
