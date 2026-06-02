@@ -167,6 +167,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7645548117182365802",
     download: "https://pan.quark.cn/s/96f797e3ba09"
   }
+},
+  {
+  id: 12,
+  title: "打字闯关练习工具",
+  desc: "适合信息科技打字课、拼音练习和英语单词复习使用。学生可以从左右手指法开始练，看着虚拟键盘完成按键训练；后续支持拼音、词语和课文跟打。还内置单词击落小游戏，单词从屏幕上掉落，学生快速输入即可击落，让打字练习更像闯关游戏",
+  shareStatus: "public",
+  categories: ["打字练习", "信息科技", "课堂工具", "学生练习"],
+  target: "信息科技老师、小学语文老师、英语老师、需要打字练习和键盘指法训练的学生",
+  subject: "信息科技 / 语文 / 英语",
+  environment: "Win10 / Win11",
+  port: "无需端口",
+  links: {
+    demo: "https://www.douyin.com/video/7646716565560434246?previous_page=app_code_link",
+    download: "https://pan.quark.cn/s/8974e2d89083"
+  }
 }
 
 ];
