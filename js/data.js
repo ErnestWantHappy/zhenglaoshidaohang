@@ -182,6 +182,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7646716565560434246?previous_page=app_code_link",
     download: "https://pan.quark.cn/s/8974e2d89083"
   }
+},
+  {
+  id: 13,
+  title: "血液循环互动演示工具",
+  desc: "适合七年级生物课堂演示和复习使用。将血液循环、体循环、肺循环、心脏瓣膜、肺泡气体交换和组织细胞交换等抽象知识点做成动态互动演示，动脉血和静脉血用不同颜色动态流动，帮助学生更直观理解血液循环路线和相关概念",
+  shareStatus: "public",
+  categories: ["生物教学", "互动演示", "课堂工具", "可视化教学"],
+  target: "初中生物老师、七年级学生、需要讲解血液循环知识点的课堂",
+  subject: "生物",
+  environment: "电脑浏览器",
+  port: "无需端口",
+  links: {
+    demo: "https://www.douyin.com/video/7648613544842366820",
+    download: "https://teacherlin.store/shengwu/index.html"
+  }
 }
 
 ];
