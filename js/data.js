@@ -197,6 +197,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7648613544842366820",
     download: "https://teacherlin.store/shengwu/index.html"
   }
+},
+  {
+  id: 15,
+  title: "教师端一键流程推进工具",
+  desc: "适合信息科技公开课、机房课堂和需要统一课堂节奏的教学场景使用。教师端可以一键切换课堂环节，学生端会自动同步进入对应任务页面，避免学生页面不统一、老师反复提醒点击位置的问题。工具支持学生登录、在线状态查看、提交数据统计、课堂环节控制和数据清空，适合用于《规律与预测》《数据分析》等课堂活动展示",
+  shareStatus: "public",
+  categories: ["信息科技", "课堂流程控制", "教师端工具", "公开课工具"],
+  target: "信息科技老师、公开课教师、需要统一推进学生课堂流程的机房课堂",
+  subject: "信息科技",
+  environment: "Win10 / Win11 / 电脑浏览器",
+  port: "3026",
+  links: {
+    demo: "https://www.douyin.com/video/7653770788441910483",
+    download: "https://pan.quark.cn/s/29373bc1a395"
+  }
 }
 
 ];
