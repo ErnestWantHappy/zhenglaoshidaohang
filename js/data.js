@@ -242,6 +242,21 @@ const projects = [
     demo: "https://www.douyin.com/video/7656742426053410667",
     download: "http://47.242.6.251:3030/"
   }
+},
+  {
+  id: 17,
+  title: "AIGC 赋能教师高效办公实战讲座资料",
+  desc: "郑老师讲座《AIGC 赋能教师高效办公实战》配套资料，适合一线教师了解 AI 在备课、教研、材料整理、课件制作、课堂工具设计和日常办公中的应用。资料可作为教师 AI 培训、校本研修、个人学习和讲座复盘参考使用",
+  shareStatus: "public",
+  categories: ["AI培训", "教师办公", "讲座资料", "AIGC应用"],
+  target: "一线教师、学校教研组、需要学习 AI 高效办公和 AIGC 教学应用的老师",
+  subject: "教师培训 / AI办公",
+  environment: "手机 / 电脑浏览器",
+  port: "无需端口",
+  links: {
+    demo: "https://www.douyin.com/note/7657840032816852214",
+    download: "https://pan.quark.cn/s/c4bba7344d1c"
+  }
 }
 
 ];
