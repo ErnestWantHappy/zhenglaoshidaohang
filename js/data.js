@@ -257,6 +257,21 @@ const projects = [
     demo: "https://www.douyin.com/note/7657840032816852214",
     download: "https://pan.quark.cn/s/c4bba7344d1c"
   }
+},
+  {
+  "id": 18,
+  "title": "本地班主任工作台",
+  "desc": "制作的本地班主任工作台工具，将班级管理中的学生名单、考勤记录、日常表现、积分管理、座位安排、值日安排和成绩分析等常用功能整合到一个工作台中，帮助一线班主任减少重复表格操作，提高班级管理效率。",
+  "shareStatus": "public",
+  "categories": ["班主任工具", "教师办公", "班级管理", "AI工具"],
+  "target": "一线班主任、需要提升班级管理效率、减少表格整理工作的教师",
+  "subject": "班主任工作 / 教师办公",
+  "environment": "手机 / 电脑浏览器",
+  "port": "无需端口",
+  "links": {
+    "demo": "https://www.douyin.com/video/7672630304523444907",
+    "download": "https://pan.quark.cn/s/5890a62a7847"
+  }
 }
 
 ];
