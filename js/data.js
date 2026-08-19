@@ -272,6 +272,21 @@ const projects = [
     "demo": "https://www.douyin.com/video/7672630304523444907",
     "download": "https://pan.quark.cn/s/5890a62a7847"
   }
+},
+  {
+  "id": 19,
+  "title": "历史大事件时间轴",
+  "desc": "面向历史学习与复习制作的历史大事件时间轴工具，将中国历史和世界历史的重要时间、事件与图片串联展示，支持中外对照、图片隐藏、关键词挖空背诵和事件详情查看，帮助学生理清历史顺序，进行记忆、自测和复习。",
+  "shareStatus": "public",
+  "categories": ["历史学习", "中考复习", "教师工具", "AI工具"],
+  "target": "初中历史老师、需要梳理历史时间线和进行中考历史复习的学生",
+  "subject": "历史",
+  "environment": "手机 / 电脑浏览器",
+  "port": "无需端口",
+  "links": {
+    "demo": "https://www.douyin.com/video/7675649510912526692?previous_page=app_code_link",
+    "download": "https://teacherlin.store/lishi/index.html"
+  }
 }
 
 ];
